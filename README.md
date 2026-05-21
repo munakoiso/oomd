@@ -4,7 +4,7 @@
 
 oomd is *userspace* Out-Of-Memory (OOM) killer for linux systems.
 
-## Background 
+## Background
 
 Out of memory killing has historically happened inside kernel space. On a
 [memory overcommitted][0] linux system, malloc(2) and friends usually never
