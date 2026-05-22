@@ -774,10 +774,12 @@ bool BaseKillPlugin::tryToLogAndKillCgroup(
         << actionContext.ruleset_name << "] " << "detectorgroup:["
         << actionContext.detectorgroup << "] "
         << "killer:" << (dry_ ? "(dry)" : "") << getName() << " v2";
-    if (!dry_) {
+    if (dry_) {
+      OOMD_KMSG_LOG(oss.str(), "oomd dry-kill");
+    } else {
       Oomd::incrementStat(CoreStats::kKillsKey, 1);
+      OOMD_KMSG_LOG(oss.str(), "oomd true-kill");
     }
-    OOMD_KMSG_LOG(oss.str(), "oomd kill");
 
     // NOTE: This is a temporary hack make sure everything is written to
     // dmesg after oomd kill so we don't bother to change oomd to
