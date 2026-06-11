@@ -58,6 +58,7 @@ srcs = files('''
     src/oomd/plugins/KillSwapUsage.cpp
     src/oomd/plugins/KillPgScan.cpp
     src/oomd/plugins/KillPressure.cpp
+    src/oomd/plugins/KswapdCpuAbove.cpp
     src/oomd/util/Fs.cpp
     src/oomd/util/Util.cpp
     src/oomd/util/PluginArgParser.cpp
